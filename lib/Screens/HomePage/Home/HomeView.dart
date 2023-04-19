@@ -8,12 +8,16 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [UserLocation(), AirQuality(), OtherInfo()],
-      ),
-    );
+    return PageView(
+        physics: ScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [UserLocation(), AirQuality(), OtherInfo()],
+          ),
+          Center(child: Text("Tips To Reduce Pollution"))
+        ]);
   }
 }

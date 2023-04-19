@@ -32,6 +32,13 @@ class LocationController extends GetxController {
     return true;
   }
 
+  Future<Placemark?> getAddressByLatLong(
+      double latitude, double longitude) async {
+    List<Placemark> places =
+        await placemarkFromCoordinates(latitude, longitude);
+    return places[0];
+  }
+
   Future<Position?> getLocation() async {
     var locationPermission = await askLocationPermision();
     if (!locationPermission) return null;

@@ -17,4 +17,14 @@ class AirQualityIndicatorController extends GetxController {
     var qui = AirQuality.fromJson(response.data);
     return qui;
   }
+
+  Future<AirQuality> getQualityDataByLatLong(
+      double latitude, double longitude) async {
+    Dio _dio = Dio();
+    var response =
+        await _dio.get(Constants.currentAirPolutionLink(latitude, longitude));
+    // print(response.data);
+    var qui = AirQuality.fromJson(response.data);
+    return qui;
+  }
 }
