@@ -23,7 +23,7 @@ class OtherInfo extends StatelessWidget {
                     color: Colors.grey)),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 18.0),
+            padding: const EdgeInsets.only(top: 18.0),
             child: Container(
               height: 250,
               child: FutureBuilder(
